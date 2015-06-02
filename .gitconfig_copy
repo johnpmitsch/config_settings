@@ -1,0 +1,25 @@
+[user]
+	name = John Mitsch 
+	email = jomitsch@redhat.com
+
+[diff]
+    color = auto
+    rename = copy
+
+[pager]
+    color = true
+
+[status]
+    color = auto
+
+[core]
+    editor = vi
+
+[push]
+    default = tracking
+
+[apply]
+  whitespace = strip
+[http]
+	sslverify = true
+	sslCAPath = /etc/pki/tls/certs
