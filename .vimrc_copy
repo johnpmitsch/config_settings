@@ -1,5 +1,12 @@
+set nocompatible
+filetype off   
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'git@github.com:vim-ruby/vim-ruby.git'
+call vundle#end()           
+filetype plugin indent on    
 execute pathogen#infect()
 syntax on
-filetype plugin on
 let g:netrw_liststyle=3
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
