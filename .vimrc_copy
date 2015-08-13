@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'git@github.com:vim-ruby/vim-ruby.git'
-Plugin 'git@github.com:wincent/command-t.git'
+Plugin 'git@github.com:kien/ctrlp.vim.git'
 Plugin 'powerline/powerline'
 Plugin 'tomasr/molokai'
 Plugin 'git@github.com:ervandew/supertab.git'
@@ -22,7 +22,7 @@ syntax enable
 set background=dark
 
 
-nmap <C-t> :CommandT<CR>
+nmap <C-t> :CtrlP<CR>
 nmap <C-k> :tabnew<CR>
 " Rename tabs to show tab number.
 " (Based on http://stackoverflow.com/questions/5927952/whats-implementation-of-vims-default-tabline-function)
