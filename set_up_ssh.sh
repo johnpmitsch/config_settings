@@ -6,5 +6,3 @@ echo "copying and pasting that to github ssh keys"
 curl -u "johnpmitsch" --data '{"title":"test-key","key":"'"$NEW_KEY"'"}' https://api.github.com/user/keys
 eval `ssh-agent`
 ssh-add
-./setup.sh
-./repo-setup.sh
