@@ -9,6 +9,7 @@ Plugin 'powerline/powerline'
 Plugin 'tomasr/molokai'
 Plugin 'git@github.com:ervandew/supertab.git'
 Plugin 'szw/vim-ctrlspace' 
+Plugin 'scrooloose/nerdtree.git'
 call vundle#end()           
 filetype plugin indent on    
 syntax on
