@@ -22,7 +22,7 @@ set hidden
 syntax enable
 set background=dark
 
-
+nmap <C-n> :NERDTreeToggle<CR>
 nmap <C-t> :CtrlP<CR>
 nmap <C-k> :tabnew<CR>
 " Rename tabs to show tab number.
