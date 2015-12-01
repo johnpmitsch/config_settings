@@ -11,3 +11,22 @@ fi
 # User specific aliases and functions
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+function rebase_foreman {
+  cd ~/foreman
+  git fetch origin
+  git checkout develop
+  git stash
+  git rebase origin/develop
+  git stash pop
+  echo "develop branch rebased"
+}
+
+function rebase_katello {
+  cd ~/katello
+  git fetch upstream
+  git fetch fork
+  git checkout master
+  git rebase upstream/master
+  echo "master branch rebased"
+}
