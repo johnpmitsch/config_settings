@@ -12,4 +12,5 @@ cp ~/config_settings/hammer_gemfile.txt Gemfile.local
 mkdir -p ~/.hammer/cli.modules.d
 cp ~/config_settings/foreman-copy.yml ~/.hammer/cli.modules.d/foreman.yml
 cp ~/config_settings/katello-local.yml ~/.hammer/cli.modules.d/katello.yml
+cp ~/config_settings/hammer_cli_config.yml ~/.hammer
 bundle exec hammer -vh
