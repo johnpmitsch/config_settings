@@ -8,3 +8,4 @@ cp ~/config_settings/pre-push ~/katello/.git/hooks
 cp ~/config_settings/pre-push ~/foreman/.git/hooks
 cp ~/config_settings/ktest ~/foreman
 cp ~/config_settings/ktest-live ~/foreman 
+echo "ktest*" >> ~/foreman/.git/info/exclude
