@@ -1,5 +1,5 @@
 # .bashrc
-export PS1="\[\e[1;35m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
+export PS1="\[\e[1;33m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -29,4 +29,19 @@ function rebase_katello {
   git checkout master
   git rebase upstream/master
   echo "master branch rebased"
+}
+
+function search_and_replace {
+  grep -rl $2 $1 | xargs sed -i s@$2@$3@g
+  echo "$2 was replaced in the following places"
+  grep -r $3 $1
+  echo "$2 replaced with $3, you lazy bastard"
+}
+
+function restart_pulp {
+  sudo systemctl stop pulp_celerybeat.service pulp_workers.service pulp_resource_manager.service
+  echo "stopped pulp services"
+  sudo systemctl start pulp_celerybeat.service pulp_workers.service pulp_resource_manager.service
+  echo "started pulp services"
+  sudo systemctl status pulp_celerybeat.service pulp_workers.service pulp_resource_manager.service
 }

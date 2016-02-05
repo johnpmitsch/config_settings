@@ -10,7 +10,8 @@ cp .screenrc_copy ~/.screenrc
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 echo 'gem "puma"' >> ~/foreman/bundler.d/katello.local.rb
-cp config.ru ~/foreman/config.ru
+echo 'gem "pry"' >> ~/foreman/bundler.d/katello.local.rb
+echo 'gem "pry-byebug"' >> ~/foreman/bundler.d/katello.local.rb
 cd ~/foreman
 bundle install
 

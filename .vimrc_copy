@@ -13,7 +13,7 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'git@github.com:easymotion/vim-easymotion.git'
-Plugin 'christoomey/vim-conflicted'
+Plugin 'git@github.com:vim-airline/vim-airline.git'
 call vundle#end()           
 filetype plugin indent on    
 syntax on
