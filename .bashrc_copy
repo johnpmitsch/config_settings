@@ -1,5 +1,5 @@
 # .bashrc
-export PS1="\[\e[1;35m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
+export PS1="\[\e[1;33m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -39,15 +39,9 @@ function search_and_replace {
 }
 
 function restart_pulp {
-  sudo systemctl stop pulp_celerybeat.service
-  sudo systemctl stop pulp_resource_manager.service
-  sudo systemctl stop pulp_workers.service
+  sudo systemctl stop pulp_celerybeat.service pulp_workers.service pulp_resource_manager.service
   echo "stopped pulp services"
-  sudo systemctl start pulp_celerybeat.service
-  sudo systemctl start pulp_resource_manager.service
-  sudo systemctl start pulp_workers.service
+  sudo systemctl start pulp_celerybeat.service pulp_workers.service pulp_resource_manager.service
   echo "started pulp services"
-  sudo systemctl status pulp_celerybeat.service
-  sudo systemctl status pulp_resource_manager.service
-  sudo systemctl status pulp_workers.service
+  sudo systemctl status pulp_celerybeat.service pulp_workers.service pulp_resource_manager.service
 }
