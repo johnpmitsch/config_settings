@@ -1,9 +1,9 @@
 #!/bin/bash
 echo "setting up dev environment"
 echo "copying files"
-cp .vimrc_copy ~/.vimrc
-cp .bashrc_copy ~/.bashrc
-cp .pryrc_copy ~/.pryrc
+ln -s .vimrc_copy ~/.vimrc
+ln -s .bashrc_copy ~/.bashrc
+ln -s .pryrc_copy ~/.pryrc
 export PS1="\[\e[1;$(shuf -i31-36 -n1)m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
 cp .gitconfig_copy ~/.gitconfig
 cp .screenrc_copy ~/.screenrc
