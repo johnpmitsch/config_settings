@@ -50,3 +50,14 @@ function setup_test_db {
   RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate
   echo "test database setup"
 }
+
+function amend_and_force_push {
+  git add .
+  git commit --amend
+  read -p "Force push? " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    git push -f fork $(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
+  fi
+}
