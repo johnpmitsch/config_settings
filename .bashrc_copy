@@ -14,12 +14,12 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 function rebase_foreman {
   cd ~/foreman
-  git fetch origin
+  git fetch upstream
   git checkout develop
   git stash
-  git rebase origin/develop
+  git rebase upstream/develop
   git stash pop
-  echo "develop branch rebased"
+  echo "upstream branch rebased"
 }
 
 function rebase_katello {
