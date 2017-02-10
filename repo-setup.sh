@@ -11,6 +11,7 @@ cp ~/config_settings/ktest-live ~/foreman
 echo "ktest*" >> ~/foreman/.git/info/exclude
 echo ":webpack_dev_server: false" >> ~/foreman/config/settings.yaml
 cd ~/foreman
+sed -ie "s/config.assets.debug = true/config.assets.debug = false/g" config/environments/development.rb
 sudo yum install -y npm
 npm install
 rake webpack:compile
