@@ -62,10 +62,22 @@ function amend_and_force_push {
   fi
 }
 
-function git-checkout-pr {
+function git-checkout-katello-pr {
  # katello only
  git fetch upstream pull/$1/head:pr$1
  git checkout pr$1
+}
+
+function git-checkout-pr {
+ git fetch origin pull/$1/head:pr$1
+ git checkout pr$1
+}
+
+function katello-migrate-bundle-start-server {
+  cd ~/foreman
+  bundle
+  rake db:migrate
+  rails s -b 0.0.0.0
 }
 
 alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate'
