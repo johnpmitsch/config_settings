@@ -4,7 +4,7 @@ git clone https://github.com/theforeman/hammer-cli.git
 git clone https://github.com/theforeman/hammer-cli-foreman.git
 git clone https://github.com/theforeman/hammer-cli-foreman-tasks.git
 cd ~/hammer-cli-katello
-echo "1.9.3" > .ruby-version
+echo "2.2.4" > .ruby-version
 echo "hammer" > .ruby-gemset
 cd ..; cd -
 bundle install
