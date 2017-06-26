@@ -12,7 +12,7 @@ echo "ktest*" >> ~/foreman/.git/info/exclude
 echo ":webpack_dev_server: false" >> ~/foreman/config/settings.yaml
 cd ~/foreman
 sed -ie "s/config.assets.debug = true/config.assets.debug = false/g" config/environments/development.rb
-sudo yum install -y npm
+sudo yum install -y npm http-parser
 npm install
 rake webpack:compile
 curl http://artscene.textfiles.com/asciiart/panda
