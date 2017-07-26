@@ -84,5 +84,12 @@ function search-bastion-katello {
    grep -ir --exclude-dir=node_modules --exclude-dir=i18n --exclude-dir=test --exclude-dir=locale $1 /home/vagrant/katello/engines/
 }
 
+function git-latest-master {
+  git fetch --all
+  git checkout master
+  git rebase origin/master
+  git status
+}
+
 alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate'
 alias g="git"
