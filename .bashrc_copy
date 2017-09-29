@@ -75,6 +75,7 @@ function git-checkout-pr {
 
 function katello-migrate-bundle-start-server {
   cd ~/foreman
+  rm -f Gemfile.lock
   bundle
   rake db:migrate
   rails s -b 0.0.0.0
