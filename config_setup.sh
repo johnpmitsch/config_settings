@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "setting up dev environment"
 echo "installing packages"
-sudo yum install -y vim fpaste tig
+sudo yum install -y vim fpaste tig hub
 echo "copying files"
 rm -f ~/.bashrc
 ln -s /home/vagrant/config_settings/.vimrc_copy ~/.vimrc
