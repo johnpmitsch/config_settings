@@ -17,3 +17,4 @@ echo 'gem "pry"' >> ~/foreman/bundler.d/katello.local.rb
 echo 'gem "pry-byebug"' >> ~/foreman/bundler.d/katello.local.rb
 cd ~/foreman
 bundle install
+export NOTIFICATION_POLLING=9999999
