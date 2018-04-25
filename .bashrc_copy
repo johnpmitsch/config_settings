@@ -1,5 +1,5 @@
 # .bashrc
-export PS1="\[\e[1;33m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
+export PS1="\[\e[1;34m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -92,6 +92,11 @@ function git-latest-master {
   git status
 }
 
+function curl_katello {
+  curl -k -u admin:changeme -H "Content-Type: application/json" 192.168.121.170:3000/katello/api/v2/$1
+}
+
 alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate'
 eval "$(hub alias -s)"
 alias g="git"
+alias kgrep="grep -r --exclude-dir=node_modules"
