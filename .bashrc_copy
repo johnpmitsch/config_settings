@@ -62,13 +62,14 @@ function amend_and_force_push {
   fi
 }
 
-function git-checkout-katello-pr {
- # katello only
- git fetch upstream pull/$1/head:pr$1
+function git-checkout-pr {
+ git fetch origin pull/$1/head:pr$1
  git checkout pr$1
 }
 
-function git-checkout-pr {
+function git-recheckout-pr {
+ git checkout master
+ git branch -D pr$1
  git fetch origin pull/$1/head:pr$1
  git checkout pr$1
 }
