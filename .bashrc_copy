@@ -97,7 +97,6 @@ function curl_katello {
 }
 
 alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate'
-eval "$(hub alias -s)"
 alias g="git"
 alias kgrep="grep -Ir --exclude-dir=node_modules"
 

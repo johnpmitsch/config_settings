@@ -9,14 +9,7 @@ cp ~/config_settings/pre-push ~/foreman/.git/hooks
 cp ~/config_settings/ktest ~/foreman
 cp ~/config_settings/ktest-live ~/foreman 
 echo "ktest*" >> ~/foreman/.git/info/exclude
-#echo ":webpack_dev_server: false" >> ~/foreman/config/settings.yaml
 cd ~/foreman
-#sed -ie "s/config.assets.debug = true/config.assets.debug = false/g" config/environments/development.rb
-sudo yum install -y https://kojipkgs.fedoraproject.org//packages/http-parser/2.7.1/3.el7/x86_64/http-parser-2.7.1-3.el7.x86_64.rpm
-sudo yum install -y npm http-parser hub
-sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
-sudo yum install yarn
-#yarn
+sudo yum install -y npm
 npm i
-#rake webpack:compile
 curl http://artscene.textfiles.com/asciiart/panda
