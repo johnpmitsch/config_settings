@@ -100,6 +100,7 @@ function curl_katello {
 alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate'
 alias g="git"
 alias kgrep="grep -Ir --exclude-dir=i18n --exclude-dir=locale --exclude-dir=node_modules"
+alias apipie_cache="FOREMAN_APIPIE_LANGS=en rake apipie:cache"
 
 export TASK_BULK_SEARCH_INTERVAL=9999999
 export NOTIFICATIONS_POLLING=99999999
