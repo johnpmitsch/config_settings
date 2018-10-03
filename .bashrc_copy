@@ -1,5 +1,5 @@
 # .bashrc
-export PS1="\[\e[1;35m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
+export PS1="\[\e[1;36m\][\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$\[\e[0m\] "
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -63,15 +63,19 @@ function amend_and_force_push {
 }
 
 function git-checkout-pr {
+ git fetch --all
  git fetch origin pull/$1/head:pr$1
  git checkout pr$1
+ git rebase origin/master
 }
 
 function git-recheckout-pr {
+ git fetch --all
  git checkout master
  git branch -D pr$1
  git fetch origin pull/$1/head:pr$1
  git checkout pr$1
+ git rebase origin/master
 }
 
 function katello-migrate-bundle-start-server {
@@ -101,6 +105,4 @@ alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test
 alias g="git"
 alias kgrep="grep -Ir --exclude-dir=i18n --exclude-dir=locale --exclude-dir=node_modules"
 alias apipie_cache="FOREMAN_APIPIE_LANGS=en rake apipie:cache"
-
-export TASK_BULK_SEARCH_INTERVAL=9999999
-export NOTIFICATIONS_POLLING=99999999
+alias update_all_the_things="cd ~/foreman && rake db:migrate && bundle update && npm install"
