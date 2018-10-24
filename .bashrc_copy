@@ -114,7 +114,8 @@ function kill_servers {
 function start_server {
   kill_servers
   cd ~/foreman
-  bundle exec ./script/foreman-start-dev
+  spring stop
+  NOTIFICATIONS_POLLING=999999999 bundle exec ./script/foreman-start-dev
 }
 
 alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate'
@@ -122,3 +123,5 @@ alias g="git"
 alias kgrep="grep -Ir --exclude-dir=i18n --exclude-dir=locale --exclude-dir=node_modules"
 alias apipie_cache="FOREMAN_APIPIE_LANGS=en rake apipie:cache"
 alias update_all_the_things="cd ~/foreman; bundle exec rake db:migrate & bundle update & npm install"
+
+export NOTIFICATIONS_POLLING=9999999999
