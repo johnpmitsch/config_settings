@@ -16,9 +16,7 @@ function rebase_foreman {
   cd ~/foreman
   git fetch upstream
   git checkout develop
-  git stash
   git rebase upstream/develop
-  git stash pop
   echo "upstream branch rebased"
 }
 
@@ -98,7 +96,7 @@ function git-latest-master {
 }
 
 function curl_katello {
-  curl -k -u admin:changeme -H "Content-Type: application/json" localhost:3000/katello/api/v2/$1
+  curl -g -k -u admin:changeme -H "Content-Type: application/json" localhost:3000/katello/api/v2/$1
 }
 
 function kill_servers {
@@ -122,6 +120,7 @@ alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test
 alias g="git"
 alias kgrep="grep -Ir --exclude-dir=i18n --exclude-dir=locale --exclude-dir=node_modules"
 alias apipie_cache="FOREMAN_APIPIE_LANGS=en rake apipie:cache"
-alias update_all_the_things="cd ~/foreman; bundle exec rake db:migrate & bundle update & npm install"
+alias update_all_the_things="cd ~/foreman; bundle exec rake db:migrate & bundle install & npm install"
 
 export NOTIFICATIONS_POLLING=9999999999
+export WEBPACK_OPTS="--https "
