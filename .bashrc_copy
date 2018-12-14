@@ -101,11 +101,11 @@ function curl_katello {
 
 function kill_servers {
   # kill node server
-  kill -9 $(ss -tulpn | grep 3808 | awk '{ print $7}' | awk -F'[=|,]' '{ print $3 }') 2> /dev/null
+  sudo kill -9 $(ss -tulpn | grep 3808 | awk '{ print $7}' | awk -F'[=|,]' '{ print $3 }') 2> /dev/null
   
   #kill rails server
   if [ -f  /home/vagrant/foreman/tmp/pids/server.pid ]; then
-    kill -9 $(cat /home/vagrant/foreman/tmp/pids/server.pid)
+    sudo kill -9 $(cat /home/vagrant/foreman/tmp/pids/server.pid)
   fi
 }
 
