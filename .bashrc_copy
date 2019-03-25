@@ -112,7 +112,7 @@ function kill_servers {
 function start_server {
   kill_servers
   cd ~/foreman
-  spring stop
+  bundle exec spring stop
   NOTIFICATIONS_POLLING=999999999 bundle exec ./script/foreman-start-dev
 }
 
