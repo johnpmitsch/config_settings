@@ -119,8 +119,8 @@ function start_server {
 alias test_db_setup='cd ~/foreman; RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate'
 alias g="git"
 alias kgrep="grep -Ir --exclude-dir=i18n --exclude-dir=locale --exclude-dir=node_modules"
-alias apipie_cache="FOREMAN_APIPIE_LANGS=en rake apipie:cache"
-alias update_all_the_things="cd ~/foreman; bundle exec bundle install && bundle exec rake db:migrate && npm install"
+alias apipie_cache="FOREMAN_APIPIE_LANGS=en bundle exec rake apipie:cache"
+alias update_all_the_things="cd ~/foreman; bundle install && bundle exec rake db:migrate && npm install"
 
 export NOTIFICATIONS_POLLING=9999999999
 export WEBPACK_OPTS="--https "
