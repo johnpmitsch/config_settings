@@ -44,11 +44,6 @@ function restart_pulp {
   sudo systemctl status pulp_celerybeat.service pulp_workers.service pulp_resource_manager.service
 }
 
-function setup_test_db {
-  RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:test:prepare && RAILS_ENV=test rake db:migrate
-  echo "test database setup"
-}
-
 function amend_and_force_push {
   git add .
   git commit --amend
@@ -121,6 +116,7 @@ alias g="git"
 alias kgrep="grep -Ir --exclude-dir=i18n --exclude-dir=locale --exclude-dir=node_modules"
 alias apipie_cache="FOREMAN_APIPIE_LANGS=en bundle exec rake apipie:cache"
 alias update_all_the_things="cd ~/foreman; bundle install && bundle exec rake db:migrate && npm install"
+alias rake="bundle exec rake"
 
 export NOTIFICATIONS_POLLING=9999999999
 export WEBPACK_OPTS="--https "
