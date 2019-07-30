@@ -10,6 +10,4 @@ cp ~/config_settings/ktest ~/foreman
 cp ~/config_settings/ktest-live ~/foreman 
 echo "ktest*" >> ~/foreman/.git/info/exclude
 cd ~/foreman
-sudo yum install -y npm
-npm i
-curl http://artscene.textfiles.com/asciiart/panda
+echo "DONE"
