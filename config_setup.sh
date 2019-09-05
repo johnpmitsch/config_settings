@@ -21,3 +21,8 @@ vim +PluginInstall +qall
 cd ~/foreman
 bundle install
 export NOTIFICATION_POLLING=9999999
+
+# workaround for some screen issues
+sudo chgrp root $(which screen)
+sudo chmod 777 /var/run/screen
+(sudo crontab -l 2>/dev/null; echo "@reboot chmod 777 /var/run/screen") | sudo crontab -
