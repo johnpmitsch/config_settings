@@ -3,16 +3,16 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'git@github.com:vim-ruby/vim-ruby.git'
-Plugin 'git@github.com:kien/ctrlp.vim.git'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'kien/ctrlp.vim'
 Plugin 'powerline/powerline'
 Plugin 'tomasr/molokai'
-Plugin 'git@github.com:ervandew/supertab.git'
+Plugin 'ervandew/supertab'
 Plugin 'szw/vim-ctrlspace' 
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'airblade/vim-gitgutter.git'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'git@github.com:easymotion/vim-easymotion.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'easymotion/vim-easymotion'
 call vundle#end()           
 filetype plugin indent on    
 syntax on

@@ -1,5 +1,0 @@
-:foreman:
-  :enable_module: true
-  :host: 'http://localhost:3000/'
-  :username: 'admin'
-  :password: 'changeme'

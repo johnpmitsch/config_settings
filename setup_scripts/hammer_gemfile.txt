@@ -1,4 +1,0 @@
-# vim:ft=ruby
-gem 'hammer_cli', :path => '../hammer-cli'
-gem 'hammer_cli_foreman', :path => '../hammer-cli-foreman'
-gem 'hammer_cli_foreman_tasks', :path => '../hammer-cli-foreman-tasks'
