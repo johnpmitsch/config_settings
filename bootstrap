@@ -3,7 +3,7 @@
 # Commented out until I figure out how to handle Github API key so this can be automated
 #./setup_scripts/set_up_ssh.sh
 
-File.chdir("./setup_scripts") do
+Dir.chdir("./setup_scripts") do
   `./config_setup.sh`
   `./repo-setup.sh`
 end
