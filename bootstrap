@@ -1,9 +1,8 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
 # Commented out until I figure out how to handle Github API key so this can be automated
 #./setup_scripts/set_up_ssh.sh
 
-Dir.chdir("./setup_scripts") do
-  `./config_setup.sh`
-  `./repo-setup.sh`
-end
+cd ./setup_scripts
+./config_setup.sh
+./repo-setup.sh
