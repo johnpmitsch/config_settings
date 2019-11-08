@@ -4,5 +4,5 @@
 #./setup_scripts/set_up_ssh.sh
 
 cd ./setup_scripts
-config_setup.sh
-repo-setup.sh
+./config_setup.sh
+./repo-setup.sh
