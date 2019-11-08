@@ -3,5 +3,6 @@
 # Commented out until I figure out how to handle Github API key so this can be automated
 #./setup_scripts/set_up_ssh.sh
 
-./setup_scripts/config_setup.sh
-./setup_scripts/repo-setup.sh
+cd ./setup_scripts
+config_setup.sh
+repo-setup.sh
