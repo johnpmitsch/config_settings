@@ -117,6 +117,7 @@ alias kgrep="grep -Ir --exclude-dir=i18n --exclude-dir=locale --exclude-dir=node
 alias apipie_cache="FOREMAN_APIPIE_LANGS=en bundle exec rake apipie:cache"
 alias update_all_the_things="cd ~/foreman; bundle install && bundle exec rake db:migrate && npm install"
 alias rake="bundle exec rake"
+alias byebug_remote="bundle exec byebug -R localhost:1048"
 
 export NOTIFICATIONS_POLLING=9999999999
 export WEBPACK_OPTS="--https "
