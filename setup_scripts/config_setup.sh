@@ -6,9 +6,6 @@ sudo yum install -y vim fpaste tig screen httpie
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-cd ~/foreman
-bundle install
-
 # workaround for some screen issues
 sudo chgrp root $(which screen)
 sudo chmod 777 /var/run/screen
