@@ -9,7 +9,6 @@ Plugin 'powerline/powerline'
 Plugin 'tomasr/molokai'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'easymotion/vim-easymotion'
 call vundle#end()           
