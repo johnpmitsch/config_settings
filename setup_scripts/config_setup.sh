@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "setting up dev environment"
 echo "installing packages"
-sudo yum install -y vim fpaste tig screen httpie jq
+sudo yum install -y vim fpaste tig screen httpie jq bash-completion
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
