@@ -10,3 +10,7 @@ vim +PluginInstall +qall
 sudo chgrp root $(which screen)
 sudo chmod 777 /var/run/screen
 (sudo crontab -l 2>/dev/null; echo "@reboot chmod 777 /var/run/screen") | sudo crontab -
+
+# No need for puppetserver in Katello
+sudo systemctl stop puppetserver
+sudo systemctl disable puppetserver
