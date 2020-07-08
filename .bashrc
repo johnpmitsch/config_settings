@@ -33,7 +33,7 @@ function search_and_replace {
   grep -rl $2 $1 | xargs sed -i s@$2@$3@g
   echo "$2 was replaced in the following places"
   grep -r $3 $1
-  echo "$2 replaced with $3, you lazy bastard"
+  echo "$2 replaced with $3"
 }
 
 function restart_pulp {
