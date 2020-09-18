@@ -14,3 +14,6 @@ sudo chmod 777 /var/run/screen
 # No need for puppetserver in Katello
 sudo systemctl stop puppetserver
 sudo systemctl disable puppetserver
+
+sudo yum-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo yum install -y gh
