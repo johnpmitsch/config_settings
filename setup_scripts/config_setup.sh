@@ -1,7 +1,9 @@
 #!/bin/bash
 echo "setting up dev environment"
 echo "installing packages"
-sudo yum install -y vim fpaste tig screen httpie jq bash-completion
+sudo yum install -y vim fpaste tig screen httpie jq bash-completion yum-utils
+sudo yum-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo yum install -y gh
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
@@ -15,5 +17,4 @@ sudo chmod 777 /var/run/screen
 sudo systemctl stop puppetserver
 sudo systemctl disable puppetserver
 
-sudo yum-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-sudo yum install -y gh
+
